@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon - Diet Packages</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,21 +16,14 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
 
-    <!-- Main Container -->
     <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-lg w-full text-center border border-gray-200">
         
-        <!-- Logo/Icon (Placeholder) -->
         <div class="mb-6 flex justify-center">
             <img src="assets/images/branding/logo-w-tagline.webp" alt="Logo">
         </div>
 
-        <!-- Title -->
-        <!-- <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">We're Launching Soon!</h1> -->
-        
-        <!-- Subtitle -->
         <p class="text-gray-600 mb-6 text-lg">Dietance is Guidance to the right diet, With over 2000 Consultations, Satisfied Clients, we are commited to providing you with the best online diet and nutrition services, tailored to your unique needs and goals. Your journey to a healthier you is just around the corner.</p>
         
-        <!-- Countdown Timer -->
         <div id="countdown-timer" class="mb-8 p-4 bg-gray-50 rounded-lg shadow-inner text-gray-800">
             <p class="text-xl md:text-2xl font-bold mb-2">Launch Countdown:</p>
             <div class="flex justify-center space-x-4">
@@ -55,7 +46,6 @@
             </div>
         </div>
         
-        <!-- Description -->
         <p class="text-gray-500 max-w-sm mx-auto">
             Get ready to explore a range of personalized diet plans and delicious meal packages designed to help you achieve your health goals. We're busy preparing everything for you.
         </p>
@@ -86,13 +76,18 @@
             document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
 
-            // If the countdown is finished, write some text
+            // If the countdown is finished, handle the redirect
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdown-timer").innerHTML = `
                     <p class="text-xl md:text-2xl font-bold mb-2 text-green-600">We're Live!</p>
-                    <p class="text-sm font-medium text-gray-500">The wait is over. Head to our main page!</p>
+                    <p class="text-sm font-medium text-gray-500">Redirecting in 5 seconds...</p>
                 `;
+                
+                // Redirect after a 5-second delay
+                setTimeout(function() {
+                    window.location.href = "https://dietance.com";
+                }, 5000); // 5000 milliseconds = 5 seconds
             }
         }, 1000);
     </script>
